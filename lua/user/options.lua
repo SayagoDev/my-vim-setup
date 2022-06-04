@@ -54,3 +54,29 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 vim.cmd [[autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE]] -- Transparent backgound
 vim.cmd [[autocmd vimenter * hi FloatBorder guibg=NONE]]
 vim.cmd [[autocmd vimenter * hi NormalFloat guibg=NONE]]
+vim.cmd [[autocmd TermOpen * setlocal nonumber norelativenumber | startinsert]]
+
+-- autocommands
+-- function nvim_create_augroups(definitions)
+--   for group_name, definition in pairs(definitions) do
+--     vim.api.nvim_command('augroup '..group_name)
+--     vim.api.nvim_command('autocmd!')
+--     for _, def in ipairs(definition) do
+--       local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
+--       vim.api.nvim_command(command)
+--     end
+--     vim.api.nvim_command('augroup END')
+--   end
+-- end
+--
+-- local change_colors = {
+--   transparent_bg = {
+--     {"vimenter", "*", "hi", "Normal", "guibg=NONE", "ctermbg=NONE"};
+--   };
+--   float_border = {
+--     {"vimenter", "*", "hi", "FloatBorder", "guibg=NONE"};
+--   };
+--   normal_float = {
+--     {"vimenter", "*", "hi", "NormalFloat", "guibg=NONE"};
+--   };
+-- }
