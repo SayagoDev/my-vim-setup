@@ -63,17 +63,8 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
 -- Bufferline
 keymap("n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", opts)
 keymap("n", "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", opts)
 keymap("n", "<leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>", opts)
 keymap("n", "<leader>4", "<Cmd>BufferLineGoToBuffer 4<CR>", opts)
-
--- Easy Exit & Save
-keymap("n", "<leader>w", ":w<CR>", opts)
-keymap("n", "<leader>W", ":wq<CR>", opts)
-keymap("n", "<leader>q", ":q<CR>", opts)
-keymap("n", "<leader>d", ":Bdelete<CR>", opts)
