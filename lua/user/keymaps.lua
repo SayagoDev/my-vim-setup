@@ -77,5 +77,3 @@ keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>W", ":wq<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
 keymap("n", "<leader>d", ":Bdelete<CR>", opts)
-
-keymap("n", "<leader>f", ":Format<CR>", opts)
