@@ -1,0 +1,14 @@
+{
+  "Agrupar Información": {
+    "prefix": "details",
+    "body": [
+      "
+<details>
+  <summary><strong>$1</strong></summary>
+
+</details>
+      "
+    ],
+    "description": "Agrupar Información"
+  }
+}
