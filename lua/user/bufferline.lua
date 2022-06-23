@@ -81,11 +81,10 @@ bufferline.setup {
       guibg = { attribute = "bg", highlight = "NONE" },
     },
 
-    -- buffer_selected = {
-    --   guifg = {attribute='fg',highlight='#ff0000'},
-    --   guibg = {attribute='bg',highlight='#0000ff'},
-    --   gui = 'none'
-    --   },
+    buffer_selected = {
+      guifg = {attribute = 'fg', highlight = '#ff0000'},
+      guibg = {attribute = 'bg', highlight = 'NONE'},
+    },
     buffer_visible = {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "NONE" },
@@ -99,10 +98,10 @@ bufferline.setup {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "NONE" },
     },
-    -- close_button_selected = {
-    --   guifg = {attribute='fg',highlight='TabLineSel'},
-    --   guibg ={attribute='bg',highlight='TabLineSel'}
-    --   },
+    close_button_selected = {
+      guifg = { attribute = 'fg', highlight = 'TabLine' },
+      guibg = { attribute = 'bg', highlight = 'NONE' }
+    },
 
     tab_selected = {
       guifg = { attribute = "fg", highlight = "Normal" },

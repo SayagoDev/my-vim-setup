@@ -5,7 +5,7 @@ local options = {
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
-  hlsearch = false,                         -- highlight all matches on previous search pattern
+  hlsearch = false,                        -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
@@ -24,11 +24,11 @@ local options = {
   expandtab = true,                        -- convert tabs to spaces
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
   tabstop = 4,                             -- insert 2 spaces for a tab
-  cursorline = false,                       -- highlight the current line
+  cursorline = false,                      -- highlight the current line
   number = true,                           -- set numbered lines
-  relativenumber = true,                  -- set relative numbered lines
+  relativenumber = true,                   -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
-  signcolumn = "auto",                      -- always show the sign column, otherwise it would shift the text each time
+  signcolumn = "auto",                     -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
@@ -38,45 +38,46 @@ local options = {
   -- colorcolumn = "80"                       -- draw a vertical line
 }
 
-vim.opt.shortmess:append "c"
+local highlight = {
+  -- Transparent Background
+  "Normal ctermbg=NONE",
 
--- vim.g.tokyodark_transparent_background = true
-vim.g.gruvbox_contrast_dark = "hard"
+  -- Float Windows
+  "FloatBorder",
+  "NormalFloat",
+
+  -- Split Window
+  "WinSeparator",
+
+  -- Details
+  "SignColumn",
+
+  -- Git Signs
+  "GitSignsAdd",
+  "GitSignsChange",
+  "GitSignsDelete",
+
+  -- LSP Diagnostic
+  "DiagnosticSignWarn",
+  "DiagnosticSignError",
+  "DiagnosticSignHint",
+  "DiagnosticSignInfo",
+}
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+for _, v in pairs(highlight) do
+  vim.cmd('autocmd vimenter * hi '..v..' guibg=NONE')
+end
+
+vim.opt.shortmess:append "c"
+vim.g.tokyodark_transparent_background = true
+vim.g.gruvbox_contrast_dark = "hard"
+
 vim.cmd [[set noshowmode noruler noshowcmd]]
-vim.cmd "set whichwrap+=<,>,[,],h,l"
+vim.cmd [[set whichwrap+=<,>,[,],h,l]]
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-vim.cmd [[autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE]] -- Transparent backgound
-vim.cmd [[autocmd vimenter * hi FloatBorder guibg=NONE]]
-vim.cmd [[autocmd vimenter * hi NormalFloat guibg=NONE]]
 vim.cmd [[autocmd TermOpen * setlocal nonumber norelativenumber | startinsert]]
-
--- autocommands
--- function nvim_create_augroups(definitions)
---   for group_name, definition in pairs(definitions) do
---     vim.api.nvim_command('augroup '..group_name)
---     vim.api.nvim_command('autocmd!')
---     for _, def in ipairs(definition) do
---       local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
---       vim.api.nvim_command(command)
---     end
---     vim.api.nvim_command('augroup END')
---   end
--- end
---
--- local change_colors = {
---   transparent_bg = {
---     {"vimenter", "*", "hi", "Normal", "guibg=NONE", "ctermbg=NONE"};
---   };
---   float_border = {
---     {"vimenter", "*", "hi", "FloatBorder", "guibg=NONE"};
---   };
---   normal_float = {
---     {"vimenter", "*", "hi", "NormalFloat", "guibg=NONE"};
---   };
--- }
