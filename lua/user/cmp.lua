@@ -9,8 +9,7 @@ if not snip_status_ok then
 end
 
 require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/markdown" } }
-require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/rust" } }
+require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets" } }
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -52,6 +51,9 @@ cmp.setup {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
+  },
+  completion = {
+    autocomplete = false
   },
   mapping = {
     ["<Up>"] = cmp.mapping.select_prev_item(),

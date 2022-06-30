@@ -58,6 +58,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use 'is0n/jaq-nvim' -- Run code
+  use 'norcalli/nvim-colorizer.lua'
 
   -- Colorschemes
   use "ellisonleao/gruvbox.nvim"
@@ -81,6 +82,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "github/copilot.vim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

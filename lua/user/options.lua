@@ -62,6 +62,9 @@ local highlight = {
   "DiagnosticSignError",
   "DiagnosticSignHint",
   "DiagnosticSignInfo",
+
+  -- Nvim Tree
+  "NvimTreeWinSeparator guifg=#7c6f64"
 }
 
 for k, v in pairs(options) do
