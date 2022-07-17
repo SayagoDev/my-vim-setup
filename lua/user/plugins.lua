@@ -59,6 +59,9 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use 'is0n/jaq-nvim' -- Run code
   use 'norcalli/nvim-colorizer.lua'
+  use 'stevearc/dressing.nvim'
+  use 'ziontee113/icon-picker.nvim'
+  use 'ThePrimeagen/refactoring.nvim'
 
   -- Colorschemes
   use "ellisonleao/gruvbox.nvim"

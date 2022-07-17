@@ -68,3 +68,11 @@ keymap("n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", opts)
 keymap("n", "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", opts)
 keymap("n", "<leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>", opts)
 keymap("n", "<leader>4", "<Cmd>BufferLineGoToBuffer 4<CR>", opts)
+
+-- Icon-picker
+keymap("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
+keymap("i", "<A-i>", "<cmd>PickEverything<cr>", opts)
+
+-- Refactoring
+-- require("telescope").load_extension("refactoring")
+keymap("v", "<leader>rr", "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", opts)
